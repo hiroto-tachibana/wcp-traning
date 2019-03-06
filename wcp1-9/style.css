@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 回り込みを防ぎたいタグにclassで指定 */
+.clearfix::after { 
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* step-boxの親要素 */
+main{ 
+  width: 960px;
+  margin: 50px auto;
+}
+
+/* ３つ共通の箱 */
+.step-box{ 
+  float: left;
+  width: 300px; /* 300-10-10=280 */
+  margin-right: 30px;
+  padding: 10px;
+  position: relative;
+  border: 1px solid #eee;
+}
+
+/* 一番右のstepbox要素だけを指定 */
+.step-box:nth-child(3){
+  margin-right: 0; /* 右側に出来てしまうpaddingをゼロにする */
+}
+
+/* 画像 */
+.step-img1{
+  height: 150px;
+  background-image: url(img/flow01.png);
+  background-size: cover;  /* 画像の縦横比を維持したまま表示領域を覆う */
+  background-position: bottom; /* 画像の下から上に向かって表示していく */
+}
+
+/* 画像 */
+.step-img2{
+  height: 150px;
+  background-image: url(img/flow02.png);
+  background-size: cover;
+  background-position: bottom;
+}
+
+/* 画像 */
+.step-img3{
+  height: 150px;
+  background-image: url(img/flow03.png);
+  background-size: cover;
+  background-position: bottom;
+}
+
+/* ステップ番号の装飾 */
+.step-number{
+  position: absolute; /* 左上の角を基準に絶対値で位置指定 */
+  top: 0; /* 角ぴったり縦 */
+  left: 0; /* 角ぴったり横 */
+  background-color: #FF9A4B;
+  color: #fff;
+  padding: 3px;
+}
+
+.title{
+  margin: 15px 0 5px;
+}
+
+@media screen and (max-width:768px) {
+  main{ 
+    width: 100%;
+    margin: 50px auto;
+  }
+  .step-box{
+     width: 90%;  
+     float: none;
+     margin: 0 auto;
+  }
+  .step-box:nth-child(1) {
+    margin-top: 50px;
+  }
+  .step-box:nth-child(2) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .step-box:nth-child(3) {
+    margin-bottom: 50px;
+    margin-right: auto;
+  }
+  .step-img1{
+    /* 画像の縦横比を維持したまま表示領域を覆う */
+  }
+}
