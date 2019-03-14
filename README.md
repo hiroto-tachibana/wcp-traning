@@ -1,2 +1,3 @@
-# wcp-traning
+﻿# wcp-traning
 DMM WEBCAMP の課題提出用リポジトリです。
+dwc01は「課題：アプリケーションを作成してみよう：基礎編」の内容になります。
