@@ -1,7 +1,10 @@
+<h1>User info</h1>
 <div class="profile-container">
-    <h3 class="profile-name"><%= book.user.name %></h3>
-    <%= attachment_image_tag user, :profile_image,　format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+    <h3 class="profile-name"><%= user.name %></h3>
+    <h3 class="profile-introduction"><%= user.introduction %></h3>
+    <%= attachment_image_tag user, :profile_image,　format: 'jpeg', fallback: "no_image.jpg",  size: "100x100"%>
 	<% if user.id == current_user.id %>
-        <p><%= link_to "プロフィール編集", edit_user_path(user), class: "pull-right" %></p>
+        <p><%= link_to "プロフィール編集", edit_user_path(user), class: "edit_user_#{user.id}" %></p>
     <% end %>
 </div>
+

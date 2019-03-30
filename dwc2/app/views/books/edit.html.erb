@@ -1,5 +1,8 @@
 <h2>Editing Book</h2>
+
 <%= form_for(@book) do |f| %>
+
+<%= render 'layouts/error_message', model: f.object %>
     <h4>Title</h4>
     <%= f.text_field :title, class: "book_title" %>
     <h4>Opinion</h4>
@@ -7,12 +10,10 @@
  <br>
     <%= f.submit 'Update Book' %>
 
-    <% if flash[:notice] %>
-      <div class="flash">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
+    <%= render 'layouts/notice' %>
  
 <% end %>
 
-<%= link_to 'Show', "/books/#{@book.id}", class: "show_#{@book.id}" %>｜<%= link_to 'Back', "/books", class: "back" %>
+<%= link_to 'Show', "/books/#{@book.id}", class: "show_#{@book.id}" %>｜
+
+<%= link_to 'Back', "/books", class: "back" %>

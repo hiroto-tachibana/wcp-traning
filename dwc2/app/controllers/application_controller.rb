@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
         devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
     end
 
+    def set_current_user
+        @current_user = User.find(id: session[:user_id])
+    end
+
 end
